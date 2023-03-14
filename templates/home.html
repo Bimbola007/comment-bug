@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+
+{% extends 'base.html' %}
+
+<html lang="en">
+
+{% block title %}News app Home{%  endblock%}
+
+
+
+
+
+{% block content %}
+
+{% if user.is_authenticated %}
+    <p> Hi {{user.username}} you are {{user.age}}years old </p>
+    <a href="{% url 'logout' %}">Log out </a>
+
+{% else %}
+    <p> Please kindly login here</p>
+    <a href="{% url 'login' %}">Login</a>
+
+<br>
+
+    <p> or signup here</p>
+    <a href="{% url 'signup' %}">Signup</a>
+
+
+<br/>
+</p>
+</div>
+
+{% endif %}
+{% endblock content   %}
+
+</html>
