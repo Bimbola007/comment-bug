@@ -1,6 +1,6 @@
 from django.shortcuts import render
 
-from .models import Articles
+from .models import Articles, Comments
 from django.views.generic import ListView, DetailView, DeleteView, UpdateView, CreateView
 from django.urls import reverse_lazy
 from django.contrib.auth.mixins import LoginRequiredMixin, UserPassesTestMixin
@@ -46,3 +46,7 @@ class CreateNewArticle(LoginRequiredMixin,CreateView):
         form.instance.author = self.request.user
         return super().form_valid(form)
 
+class CreateNewComment(CreateView):
+    model = Comments
+    template_name = 'New_Comment.html'
+    fields = ['author', 'article', 'comment']

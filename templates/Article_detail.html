@@ -16,9 +16,15 @@
 
 {{object.body}}
 
-<a href="{% url 'Article_edit' object.pk %}">Edit this Article</a> | <a href="{% url 'Article_delete' object.pk %}">Delete this Article</a>
-<br>
 
+  <br>
+    <br>
+    <br>
+
+<a href="{% url 'Article_edit' object.pk %}">Edit this Article</a> | <a href="{% url 'Article_delete' object.pk %}">Delete this Article</a>
+
+<br>
+<br>
 <p> Click below to return to the articles list </p>
 <a href="{% url 'articles_list' %}">List of Articles</a>
 

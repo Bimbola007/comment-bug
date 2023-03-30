@@ -15,7 +15,9 @@
  <!-- Changes start here! -->
 <p>{{ article.body }}</p>
 <a href="{% url 'Article_edit' article.pk  %}">Edit</a> |
- <a href="{% url 'Article_delete' article.pk   %}">Delete</a>
+ <a href="{% url 'Article_delete' article.pk   %}">Delete</a> |
+    <a href="{% url 'New_Comment' %}" >Add New Comment</a>
+
 </div>
 
 <div class="card-footer">
@@ -27,11 +29,12 @@
        {{ comment }}
           </p>
 {% endfor %}
-</div>
+
 
 </div>
 <div class="card-footer text-center text-muted">
 </div>
+
 </div>
 
 <br />

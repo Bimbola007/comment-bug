@@ -20,9 +20,9 @@ class Articles(models.Model):
 
 
 class Comments(models.Model):
-    article = models.ForeignKey(Articles, on_delete=models.CASCADE)
+    article = models.ForeignKey(Articles, on_delete=models.CASCADE, related_name = 'comments')
     comment = models.TextField(max_length=500)
-    author = models.ForeignKey(get_user_model(), on_delete=models.CASCADE, related_name = 'comments')
+    author = models.ForeignKey(get_user_model(), on_delete=models.CASCADE,)
 
     def __str__(self):
         return self.comment
